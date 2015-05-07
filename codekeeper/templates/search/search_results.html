@@ -15,6 +15,13 @@
         {% for snippet in content.results.snippets %}
         <div class="list-group-item">
             <h5><a href="{{ snippet.url }}">{{ snippet.title }}</a></h5>
+            {% if snippet.tags %}
+            <ul class="list-inline">
+                {% for tag in snippet.tags %}
+                <li>{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
