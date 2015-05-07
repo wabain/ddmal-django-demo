@@ -1,0 +1,24 @@
+{% if content.results.numFound > 0 %}
+{% if content.results.people %}
+    <h4>People</h4>
+    <div class="list-group">
+        {% for person in content.results.people %}
+        <div class="list-group-item">
+            <h5><a href="{{ person.url }}">{{ person.name }}</a></h5>
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% if content.results.snippets %}
+    <h4>Snippets</h4>
+    <div class="list-group">
+        {% for snippet in content.results.snippets %}
+        <div class="list-group-item">
+            <h5><a href="{{ snippet.url }}">{{ snippet.title }}</a></h5>
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% else %}
+<b>No Results found.</b>
+{% endif %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+<ul>
+    {% for person in content %}
+    <li><a href="{{ person.url }}">{{ person.first_name }} {{ person.last_name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

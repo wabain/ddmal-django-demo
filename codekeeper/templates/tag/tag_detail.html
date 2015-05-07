@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h2>{{ content.name }}</h2>
+    <h3>Snippets</h3>
+    <ul>
+        {% for snippet in content.snippets %}
+        <li>
+            <a href="{{ snippet.url }}"><strong>{{ snippet.title }}</strong></a> by <a href="{{ snippet.creator.url }}">{{ snippet.creator.full_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

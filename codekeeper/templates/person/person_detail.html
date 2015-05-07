@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h2>Person</h2>
+    <p>
+        {{ content.full_name }}
+    </p>
+
+<h3>Snippets</h3>
+<ul>
+    {% for snippet in content.snippets %}
+    <li><a href="{{ snippet.url }}">{{ snippet.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
